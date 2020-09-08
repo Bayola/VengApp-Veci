@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "VengappVeci"
+rootProject.name = "VengaApp_Veci"
