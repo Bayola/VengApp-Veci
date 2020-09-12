@@ -31,11 +31,14 @@
     <string name="buttonRegistrarse_text">Sign Up</string>
     <string name="buttonRegistrarALogin_text">Back to Login</string>
     <string name="addNewUser">Add new User</string>
-    <string name="password_no_coincide">Password must be the same</string>
+
     <string name="imageView1">Mas</string>
     <string name="imageView2">Mail</string>
     <string name="imageView3">Pass</string>
     <string name="imageView4">PassC</string>
     <string name="editTextTextEmailAddress_hint">Input your email</string>
+    <string name="email_NoValido">email not valid</string>
+    <string name="password_longitudNoValida">Password must be at least 8 characters</string>
+    <string name="password_no_coincide">Password must be the same</string>
 
 </resources>
