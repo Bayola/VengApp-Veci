@@ -23,4 +23,19 @@
     <string name="textViewPrecioP">99 $</string>
     <string name="title_activity_pantalla_principal">PantallaPrincipal</string>
 
+    <string name="Ingrese_correo">Ingrese correo</string>
+    <string name="Ingrese_Password">Ingrese Password</string>
+    <string name="imageViewLogo_text">Contacts Logo</string>
+    <string name="editTextPassword_hint">Input your password</string>
+    <string name="editTextPasswordConfirm_hint">Confirm your password</string>
+    <string name="buttonRegistrarse_text">Sign Up</string>
+    <string name="buttonRegistrarALogin_text">Back to Login</string>
+    <string name="addNewUser">Add new User</string>
+    <string name="password_no_coincide">Password must be the same</string>
+    <string name="imageView1">Mas</string>
+    <string name="imageView2">Mail</string>
+    <string name="imageView3">Pass</string>
+    <string name="imageView4">PassC</string>
+    <string name="editTextTextEmailAddress_hint">Input your email</string>
+
 </resources>
