@@ -14,7 +14,7 @@ import com.luceromichael.vengappveci.DetalleProducto
 import com.luceromichael.vengappveci.PantallaCarrito
 import com.luceromichael.vengappveci.R
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_slideshow.*
+import kotlinx.android.synthetic.main.fragment_logout.*
 
 class HomeFragment : Fragment() {
 

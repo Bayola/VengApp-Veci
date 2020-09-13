@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.luceromichael.vengappveci.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_login"
+        android:name="com.luceromichael.vengappveci.ui.login.LoginFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_login" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.luceromichael.vengappveci.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_registro"
+        android:name="com.luceromichael.vengappveci.ui.registro.RegistroFragment"
+        android:label="@string/registrarse"
+        tools:layout="@layout/fragment_registro" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.luceromichael.vengappveci.ui.logout.LogOutFragment"
+        android:label="@string/cerrar_sesi_n"
+        tools:layout="@layout/fragment_logout" />
+
+    <fragment
+        android:id="@+id/nav_carrito"
+        android:name="com.luceromichael.vengappveci.ui.carrito.CarritoFragment"
+        android:label="@string/carrito_de_compras"
+        tools:layout="@layout/fragment_carrito" />
 </navigation>

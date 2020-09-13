@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gallery.GalleryFragment">
+    tools:context=".ui.login.CarritoFragment">
 
     <TextView
         android:id="@+id/text_gallery"
@@ -19,6 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -49,8 +50,8 @@
         android:background="@drawable/bodes"
         android:drawableLeft="@android:drawable/sym_action_email"
         android:ems="10"
+        android:hint="@string/editTextCorreo"
         android:inputType="textPersonName"
-        android:text="@string/editTextCorreo"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -75,13 +76,13 @@
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bodes"
         android:autofillHints=""
-        android:textAlignment="center"
+        android:background="@drawable/bodes"
         android:drawableLeft="@android:drawable/ic_lock_idle_lock"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/editTextContrasena"
+        android:hint="@string/editTextContrasena"
+        android:inputType="textPassword"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/editTextCorreo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextCorreo"
@@ -115,10 +116,22 @@
         android:id="@+id/imageView3"
         android:layout_width="209dp"
         android:layout_height="281dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextCorreo"
         app:layout_constraintStart_toStartOf="@+id/editTextCorreo"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shop_icon" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

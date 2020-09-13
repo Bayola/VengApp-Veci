@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondogradiente"
-    tools:context=".PantallaRegistro">
+    tools:context=".ui.registro.RegistroFragment">
 
 
     <ImageView
@@ -41,6 +40,7 @@
         android:background="@drawable/bodes"
         android:ems="10"
         android:hint="@string/editTextPass2"
+        android:inputType="textPassword"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/editTextpass1"
         app:layout_constraintStart_toStartOf="@+id/editTextpass1"
@@ -54,6 +54,7 @@
         android:background="@drawable/bodes"
         android:ems="10"
         android:hint="@string/editTextpass1"
+        android:inputType="textPassword"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/editTextTelefono"
         app:layout_constraintStart_toStartOf="@+id/editTextTelefono"
@@ -109,5 +110,16 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonRegistrarse"
         app:layout_constraintStart_toStartOf="@+id/buttonRegistrarse"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegistrarse" />
+
+    <ProgressBar
+        android:id="@+id/loading2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

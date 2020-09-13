@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1033053469445",
+    "firebase_url": "https://vengappveci.firebaseio.com",
+    "project_id": "vengappveci",
+    "storage_bucket": "vengappveci.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033053469445:android:2ab64b9eec087d08e2156c",
+        "android_client_info": {
+          "package_name": "com.luceromichael.vengappveci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1033053469445-uevb3jp6r2ealrnp2fjulfss6pckqt33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEqSNHtWzAk3tU1l2YAH6B1_HBhMfFoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1033053469445-uevb3jp6r2ealrnp2fjulfss6pckqt33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

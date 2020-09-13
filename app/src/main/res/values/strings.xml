@@ -36,5 +36,9 @@
     <string name="textViewCantidad">Cantidad</string>
     <string name="buttonAgregar">Agragar al carrito</string>
     <string name="textViewNumeroP">N</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="carrito_de_compras">Carrito de compras</string>
+    <string name="historial_de_pedidos">Historial de pedidos</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
 
 </resources>
