@@ -1,4 +1,4 @@
-package com.luceromichael.vengappveci.ui.carrito
+package com.luceromichael.vengappveci.ui.pedidos
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,14 +9,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
 
 
-class CarritoFragment : Fragment() {
+class PedidosFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_carrito, container, false)
+        return inflater.inflate(R.layout.fragment_pedidos, container, false)
     }
 
     private val TAG = "CarritoFragment"

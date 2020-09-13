@@ -9,12 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.luceromichael.vengappveci.DetallePedido
 import com.luceromichael.vengappveci.DetalleProducto
-import com.luceromichael.vengappveci.PantallaCarrito
 import com.luceromichael.vengappveci.R
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_logout.*
 
 class HomeFragment : Fragment() {
 
@@ -39,10 +36,10 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
 
-            imageViewCarrito.setOnClickListener {
-                val intent = Intent(activity, PantallaCarrito::class.java)
-                startActivity(intent)
-            }
+//            imageViewCarrito.setOnClickListener {
+//                val intent = Intent(activity, PantallaCarrito::class.java)
+//                startActivity(intent)
+//            }
 
         })
         return root

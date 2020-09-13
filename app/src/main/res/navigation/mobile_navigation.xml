@@ -34,4 +34,10 @@
         android:name="com.luceromichael.vengappveci.ui.carrito.CarritoFragment"
         android:label="@string/carrito_de_compras"
         tools:layout="@layout/fragment_carrito" />
+
+    <fragment
+        android:id="@+id/nav_hpedidos"
+        android:name="com.luceromichael.vengappveci.ui.pedidos.PedidosFragment"
+        android:label="@string/historial_de_pedidos"
+        tools:layout="@layout/fragment_pedidos" />
 </navigation>
