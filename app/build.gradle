@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.luceromichael.vengaapp_veci"
+        applicationId "com.luceromichael.vengappveci"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1

@@ -1,4 +1,4 @@
-package com.luceromichael.vengaapp_veci
+package com.luceromichael.vengappveci
 
 import org.junit.Test
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VengaApp_Veci</string>
+    <string name="app_name">VengappVeci</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">VengApp Veci</string>
@@ -22,5 +22,19 @@
     <string name="textiewProducto">Nombre Producto</string>
     <string name="textViewPrecioP">99 $</string>
     <string name="title_activity_pantalla_principal">PantallaPrincipal</string>
+    <string name="textViewPedidos">Pedidos</string>
+    <string name="buttonRegresar">Regresar</string>
+    <string name="textViewpedido1">Pedido 1</string>
+    <string name="editTextNombre">Ingrese su nombre</string>
+    <string name="editTextCorreoElectronico">Ingrese su correo</string>
+    <string name="editTextTelefono">Ingrese su teléfono</string>
+    <string name="editTextpass1">Ingrese una contraseña</string>
+    <string name="editTextPass2">Confirme su contraseña</string>
+    <string name="buttonCancelar">CANCELAR</string>
+    <string name="buttonHacerPed">Hacer Pedido</string>
+    <string name="textViewNombreP">Nombre Producto</string>
+    <string name="textViewCantidad">Cantidad</string>
+    <string name="buttonAgregar">Agragar al carrito</string>
+    <string name="textViewNumeroP">N</string>
 
 </resources>

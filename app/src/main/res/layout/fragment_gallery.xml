@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.iniciar_sesion.IniciarSesionFragment">
+    tools:context=".ui.gallery.GalleryFragment">
 
     <TextView
         android:id="@+id/text_gallery"
@@ -19,7 +19,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/imageView2"
@@ -116,7 +115,6 @@
         android:id="@+id/imageView3"
         android:layout_width="209dp"
         android:layout_height="281dp"
-        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextCorreo"
         app:layout_constraintStart_toStartOf="@+id/editTextCorreo"
         app:layout_constraintTop_toTopOf="parent"

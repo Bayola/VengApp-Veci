@@ -1,10 +1,10 @@
-package com.luceromichael.vengaapp_veci.ui.iniciar_sesion
+package com.luceromichael.vengappveci.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class IniciarSesionViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = ""
