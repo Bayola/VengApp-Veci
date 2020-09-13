@@ -1,9 +1,7 @@
 package com.luceromichael.vengaapp_veci
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -15,9 +13,6 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class PantallaPrincipalActivity : AppCompatActivity() {
 
@@ -26,10 +21,8 @@ class PantallaPrincipalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_principal)
-        mAuth = FirebaseAuth(FirebaseApp.getInstance())
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        contexto = this.applicationContext
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
@@ -46,21 +39,6 @@ class PantallaPrincipalActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        var currentUser: FirebaseUser? = mAuth.currentUser
-        updateUI(currentUser)
-    }
-
-    fun updateUI(user: FirebaseUser?) {
-        if(user != null){
-            Toast.makeText(this, "Inicio de sesion exitoso.", Toast.LENGTH_LONG).show()
-            /** INGRESO DE SESION AUTOMATICO **/
-            //val intent = Intent(this, principal::class.java)
-            //startActivity(intent)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
