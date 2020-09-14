@@ -2,6 +2,7 @@ package com.luceromichael.vengappveci
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,11 +39,12 @@ class ProductoHomeAdapter(
 
         holder.name.text =  "${productos[position].name}"
         holder.price.text =  "${productos[position].price}"
-
+        var imageUrl = productos[position].image as String
+        Log.d("image url: ", imageUrl)
         Glide
             .with(context)
             .asBitmap()
-            .load("${productos[position].image}")
+            .load(imageUrl)
             .into(object : SimpleTarget<Bitmap?>(100, 100) {
                 override fun onResourceReady(
                     resource: Bitmap,

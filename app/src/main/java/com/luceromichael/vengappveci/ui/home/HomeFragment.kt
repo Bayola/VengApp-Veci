@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
                                 document.id,
                                 document.data.get("nombre").toString(),
                                 document.data.get("precio").toString().toFloat(),
-                                document.data.get("image").toString(),
+                                document.data.get("imagen").toString(),
                                 document.data.get("detalle").toString()
                         ))
                     }

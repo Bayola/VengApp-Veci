@@ -31,6 +31,7 @@ class CarritoFragment : Fragment() {
 
 
         buttonHacerPed.setOnClickListener({
+            savePedido(PedidoModelClass("","",null, 0f))
         })
     }
 
