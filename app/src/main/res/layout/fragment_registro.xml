@@ -107,6 +107,7 @@
         android:background="@drawable/bordesboton"
         android:text="@string/buttonCancelar"
         android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/buttonRegistrarse"
         app:layout_constraintStart_toStartOf="@+id/buttonRegistrarse"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegistrarse" />
