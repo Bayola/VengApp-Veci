@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_detalle_pedido.*
 import kotlinx.android.synthetic.main.fragment_pedidos.*
+import kotlinx.android.synthetic.main.fragment_pedidos.buttonRegresar
 
 
 class DetallePedido : AppCompatActivity() {
@@ -71,7 +73,10 @@ class DetallePedido : AppCompatActivity() {
                         total
                     ))
             }
-        }
+                var detallesPedidoAdaptador = ListProdInPedAdapter(this,listaDetPedido)
+                listViewDetallesPedido.adapter = detallesPedidoAdaptador
+            }
+        
     }
 }
 
