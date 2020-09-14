@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        listproductos = arrayListOf<ProductoModelClass>()
 
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
