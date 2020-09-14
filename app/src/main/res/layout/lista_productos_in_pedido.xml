@@ -8,38 +8,38 @@
 
     <TextView
         android:id="@+id/textViewNombre"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
         android:text="@string/textViewNombre"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrecioP"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewCantidad"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_width="72dp"
+        android:layout_height="20dp"
         android:text="@string/textViewCantidad"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewPrecioP"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrecioP"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textViewNombre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewPrecioP"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="20dp"
         android:text="@string/textViewPrecioP"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewSubtotal"
-        app:layout_constraintEnd_toStartOf="@+id/textViewSubtotal"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textViewCantidad"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewSubtotal"
-        android:layout_width="94dp"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
         android:text="@string/textViewSubtotal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/textViewPrecioP"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
