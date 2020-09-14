@@ -1,26 +1,24 @@
 package com.luceromichael.vengappveci.ui.home
 
-import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.ProductoModelClass
 import com.luceromichael.vengappveci.R
-import com.luceromichael.vengappveci.mAuth
-import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -29,7 +27,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var productos: Array<ProductoModelClass>
     var listproductos = arrayListOf<ProductoModelClass>()
-
+    private lateinit var buscar : EditText
     private lateinit var homeViewModel: HomeViewModel
     private val layoutManager: RecyclerView.LayoutManager? = null
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -55,6 +53,9 @@ class HomeFragment : Fragment() {
             textView.text = it
 
 
+
+
+
             db.collection("productos")
                 .get()
                 .addOnSuccessListener { result ->
@@ -67,7 +68,8 @@ class HomeFragment : Fragment() {
                                 document.data.get("precio").toString().toFloat(),
                                 document.data.get("imagen").toString(),
                                 document.data.get("detalle").toString()
-                        ))
+                            )
+                        )
                     }
                     productos = listproductos.toTypedArray()
                     productoHomeAdapter = ProductoHomeAdapter(
@@ -82,16 +84,48 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
 
-            imageViewCarrito.setOnClickListener{
+            imageViewCarrito.setOnClickListener {
                 //val intent = Intent(activity, com.luceromichael.vengappveci.ui.login.CarritoFragment::class.java)
                 //startActivity(intent)
             }
+
+
+            buscar = view?.findViewById(R.id.editTextBuscar)!!
+            buscar.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun afterTextChanged(s: Editable) {
+                    filtrar(s.toString())
+                }
+            })
+
+
 
         })
 
         return root
     }
 
+    fun filtrar(texto: String) {
+        val filtrarLista: ArrayList<ProductoModelClass> = ArrayList()
+        for (product in productos) {
+            Log.d("mensaje de coprovacion",product.name)
 
+
+            if (product.name.toLowerCase().contains(texto.toLowerCase().trim())) {
+
+                filtrarLista.add(product)
+            }
+
+        }
+        productoHomeAdapter?.filtrar(filtrarLista)
+    }
 }
 

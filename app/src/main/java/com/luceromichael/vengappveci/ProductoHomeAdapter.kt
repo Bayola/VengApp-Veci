@@ -9,22 +9,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 
 
-
 class ProductoHomeAdapter(
-    private val context: Context,
+    private var context: Context,
 
-    private val productos: Array<ProductoModelClass>,
+    private var productos: Array<ProductoModelClass>,
 
-    private val layout: Int
+    private var layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
     var listaId = arrayListOf<String>()
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -45,18 +44,17 @@ class ProductoHomeAdapter(
             .asBitmap()
             .load(imageUrl)
              .into(object : SimpleTarget<Bitmap?>(100, 100) {
-                override fun onResourceReady(
-                    resource: Bitmap,
-                    transition: Transition<in Bitmap?>?
-                )
-                {
-                    holder.image.setImageBitmap(resource)
-                }
-            })
-        Log.d("producto id no image: ",productos[position].id)
+                 override fun onResourceReady(
+                     resource: Bitmap,
+                     transition: Transition<in Bitmap?>?
+                 ) {
+                     holder.image.setImageBitmap(resource)
+                 }
+             })
+        Log.d("producto id no image: ", productos[position].id)
         if(currentUSer.user !=null){
             holder.image.setOnClickListener {
-                Log.d("producto id: ",productos[position].id)
+                Log.d("producto id: ", productos[position].id)
                 val intent = Intent(context, DetalleProducto::class.java)
                 intent.putExtra("id", productos[position].id)
                 context.startActivity(intent)
@@ -85,6 +83,10 @@ class ProductoHomeAdapter(
 
     }
 
+    fun filtrar(filterProducts: ArrayList<ProductoModelClass>) {
+        this.productos = filterProducts.toTypedArray()
+        notifyDataSetChanged()
+    }
 
 }
 
