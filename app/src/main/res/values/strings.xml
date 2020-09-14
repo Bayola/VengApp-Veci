@@ -40,5 +40,7 @@
     <string name="carrito_de_compras">Carrito de compras</string>
     <string name="historial_de_pedidos">Historial de pedidos</string>
     <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="imageViewFondoLogin">imageViewFondoLogin</string>
+    <string name="imageViewTiendaLogo">imageViewTiendaLogo</string>
 
 </resources>

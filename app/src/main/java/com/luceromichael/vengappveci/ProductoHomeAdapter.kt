@@ -23,8 +23,6 @@ class ProductoHomeAdapter(
     private val layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
 
-
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
