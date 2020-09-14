@@ -21,6 +21,9 @@ class ProductoHomeAdapter(
 
     private val layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
+
+
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -35,6 +38,7 @@ class ProductoHomeAdapter(
 
         holder.name.text =  "${productos[position].name}"
         holder.price.text =  "${productos[position].price}"
+
         Glide
             .with(context)
             .asBitmap()
@@ -43,11 +47,11 @@ class ProductoHomeAdapter(
                 override fun onResourceReady(
                     resource: Bitmap,
                     transition: Transition<in Bitmap?>?
-                ) {
+                )
+                {
                     holder.image.setImageBitmap(resource)
                 }
             })
-
     }
 
     override fun getItemCount(): Int {
@@ -69,5 +73,7 @@ class ProductoHomeAdapter(
         }
 
     }
+
+
 }
 
