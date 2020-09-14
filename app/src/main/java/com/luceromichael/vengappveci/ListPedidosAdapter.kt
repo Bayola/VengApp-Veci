@@ -15,7 +15,6 @@ class ListPedidosAdapter(private val context: PedidosFragment, private val pedid
         val textViewFecha = rowView.findViewById<TextView>(R.id.textViewFechaPedido)
         val textViewTotal = rowView.findViewById<TextView>(R.id.textViewTotalPedido)
         val posicion = position + 1
-
         textViewFecha.text = "${pedidos[position].fecha}"
         textViewTotal.text = "${pedidos[position].total}"
         return rowView

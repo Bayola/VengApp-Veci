@@ -58,10 +58,11 @@ class HomeFragment : Fragment() {
                         Log.d(TAG, "${document.id} => ${document.data}")
                         listproductos.add(
                             ProductoModelClass(
-                            document.data.get("nombre").toString(),
-                            document.data.get("precio").toString().toFloat(),
-                            document.data.get("image").toString(),
-                            document.data.get("detalle").toString()
+                                document.id,
+                                document.data.get("nombre").toString(),
+                                document.data.get("precio").toString().toFloat(),
+                                document.data.get("image").toString(),
+                                document.data.get("detalle").toString()
                         ))
                     }
                     productos = listproductos.toTypedArray()
