@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.SimpleTarget
@@ -23,7 +24,7 @@ class ProductoHomeAdapter(
 
     private val layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
-
+    var listaId = arrayListOf<String>()
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -39,7 +40,6 @@ class ProductoHomeAdapter(
         holder.name.text =  "${productos[position].name}"
         holder.price.text =  "${productos[position].price}"
         var imageUrl = productos[position].image as String
-        Log.d("image url: ", imageUrl)
         Glide
             .with(context)
             .asBitmap()
@@ -53,22 +53,14 @@ class ProductoHomeAdapter(
                     holder.image.setImageBitmap(resource)
                 }
             })
+        Log.d("producto id no image: ",productos[position].id)
         if(currentUSer.user !=null){
             holder.image.setOnClickListener {
+                Log.d("producto id: ",productos[position].id)
                 val intent = Intent(context, DetalleProducto::class.java)
                 intent.putExtra("id", productos[position].id)
-                intent.putExtra("name", productos[position].name)
-                intent.putExtra("image", productos[position].image)
-                intent.putExtra("price", productos[position].price.toString())
-                intent.putExtra("detail", productos[position].detail)
-
                 context.startActivity(intent)
             }
-        }
-        holder.image.setOnClickListener {
-            val intent = Intent(context, DetalleProducto::class.java)
-            intent.putExtra("pedido", "")
-            context.startActivity(intent)
         }
 
     }
