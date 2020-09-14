@@ -1,9 +1,7 @@
 package com.luceromichael.vengappveci
 
-import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -22,8 +20,13 @@ class DetalleProducto : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_producto)
-
-        //Toast.makeText(this, intent.getStringExtra("id").toString(), Toast.LENGTH_LONG).show()
+        var producto = ProductoModelClass(
+            intent.getStringExtra("id").toString(),
+            intent.getStringExtra("name").toString(),
+            intent.getStringExtra("price").toString().toFloat(),
+            intent.getStringExtra("image").toString(),
+            intent.getStringExtra("detail").toString()
+        )
 
         var nombre = findViewById<TextView>(R.id.textViewNombreP)
         var precio = findViewById<TextView>(R.id.textViewPrecioP)

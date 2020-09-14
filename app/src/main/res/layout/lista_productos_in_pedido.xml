@@ -10,26 +10,28 @@
         android:id="@+id/textViewNombre"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="NOMBRE"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrecio"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPrecioP"
+        android:id="@+id/textViewCantidad"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:text="CANTIDAD"
-        app:layout_constraintStart_toEndOf="@+id/textViewNombre"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPrecio"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrecio"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPrecioP"
+        android:id="@+id/textViewPrecio"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="PRECIO"
-        app:layout_constraintStart_toEndOf="@+id/textViewPrecioP"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSubtotal"
+        app:layout_constraintEnd_toStartOf="@+id/textViewSubtotal"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -37,7 +39,7 @@
         android:layout_width="94dp"
         android:layout_height="wrap_content"
         android:text="SUBTOTAL"
-        app:layout_constraintStart_toEndOf="@+id/textViewPrecioP"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
