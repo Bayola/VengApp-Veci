@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1033053469445-hb1l1o0158lbpm9gf2lq29eks72s32d1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.luceromichael.vengappveci",
+            "certificate_hash": "bfbddc332e0c36978aff27fb0fa23c3a3f401998"
+          }
+        },
+        {
           "client_id": "1033053469445-uevb3jp6r2ealrnp2fjulfss6pckqt33.apps.googleusercontent.com",
           "client_type": 3
         }

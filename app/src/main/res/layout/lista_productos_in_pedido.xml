@@ -10,7 +10,7 @@
         android:id="@+id/textViewNombre"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:text="NOMBRE"
+        android:text="@string/textViewNombre"
         app:layout_constraintEnd_toStartOf="@+id/textViewPrecioP"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         android:id="@+id/textViewCantidad"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="CANTIDAD"
+        android:text="@string/textViewCantidad"
         app:layout_constraintBottom_toBottomOf="@+id/textViewPrecioP"
         app:layout_constraintEnd_toStartOf="@+id/textViewPrecioP"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +29,7 @@
         android:id="@+id/textViewPrecioP"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="PRECIO"
+        android:text="@string/textViewPrecioP"
         app:layout_constraintBottom_toBottomOf="@+id/textViewSubtotal"
         app:layout_constraintEnd_toStartOf="@+id/textViewSubtotal"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
         android:id="@+id/textViewSubtotal"
         android:layout_width="94dp"
         android:layout_height="wrap_content"
-        android:text="SUBTOTAL"
+        android:text="@string/textViewSubtotal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

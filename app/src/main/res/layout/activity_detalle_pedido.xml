@@ -36,7 +36,7 @@
         android:id="@+id/textViewTotalDetPed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total"
+        android:text="@string/textViewTotalDetPed"
         app:layout_constraintBottom_toTopOf="@+id/buttonRegresar"
         app:layout_constraintEnd_toEndOf="@+id/listViewDetallesPedido" />
 

@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
+import com.luceromichael.vengappveci.ui.login.LoginFragment
 import kotlinx.android.synthetic.main.fragment_pedidos.*
 
 
@@ -59,7 +60,8 @@ class PedidosFragment : Fragment() {
             startActivity(intent)
         }
         buttonRegresar.setOnClickListener{
-            this.requireActivity().onBackPressed()
+            val intent = Intent(requireContext(), LoginFragment::class.java)
+            startActivity(intent)
         }
     }
 }
