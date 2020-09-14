@@ -20,7 +20,6 @@ class DetallePedido : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_pedido)
         idPed = intent.getStringExtra("pedido").toString()
-        Toast.makeText(this, idPed, Toast.LENGTH_LONG).show()
         db.collection("pedidos/"+idPed+"/detallePedidos")
             .get()
             .addOnSuccessListener { result ->
