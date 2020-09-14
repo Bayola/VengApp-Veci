@@ -36,6 +36,8 @@ class CarritoFragment : Fragment() {
 
 
         //adaptador
+        //lista productos = carrito
+        //sumacarrito = totalcarrito
 
 
 
