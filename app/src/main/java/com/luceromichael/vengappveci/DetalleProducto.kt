@@ -2,6 +2,7 @@ package com.luceromichael.vengappveci
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 
 class DetalleProducto : AppCompatActivity() {
@@ -20,7 +21,11 @@ class DetalleProducto : AppCompatActivity() {
         var precio = findViewById<TextView>(R.id.textViewPrecioP)
         var detalle = findViewById<TextView>(R.id.textViewNombreP)
         var cantidad = findViewById<TextView>(R.id.textViewNombreP)
+        var image = findViewById<ImageView>(R.id.imageViewProductoDetalleProducto)
 
+        nombre.text = producto.name
+        precio.text = producto.price.toString()
+        detalle .text = producto.detail
 
     }
 }
