@@ -65,5 +65,8 @@ class PedidosFragment : Fragment() {
             intent.putExtra("pedido", pedido.id)
             startActivity(intent)
         }
+        buttonRegresar.setOnClickListener{
+            this.requireActivity().onBackPressed()
+        }
     }
 }
