@@ -78,7 +78,7 @@ class DetallePedido : AppCompatActivity() {
                 var detallesPedidoAdaptador = ListProdInPedAdapter(this,listaDetPedido)
                 listViewDetallesPedido.adapter = detallesPedidoAdaptador
             }
-        
+
     }
 }
 
