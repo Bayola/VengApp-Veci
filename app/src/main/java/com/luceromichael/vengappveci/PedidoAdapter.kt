@@ -1,36 +1,47 @@
 package com.luceromichael.vengappveci
 
-import android.app.Activity
-import android.util.Log
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
-class PedidoAdapter (private val context: Activity, private val pedidos: ArrayList<PedidoModelClass>)   : BaseAdapter() {
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val inflater = context.layoutInflater
-        val rowView = inflater.inflate(R.layout.pedido, null, true)
+class PedidoAdapter : RecyclerView.Adapter<PedidoAdapter.MyViewHolder> {
 
-        val textViewFechaPedido = rowView.findViewById<TextView>(R.id.textViewFechaPedido)
-        val textViewTotalPedido = rowView.findViewById<TextView>(R.id.textViewTotalPedido)
+    lateinit var mContext: Context
+    lateinit var mData: List<PedidoModelClass>
 
-        textViewFechaPedido.text = "${pedidos[position].fecha}"
-        textViewTotalPedido.text = "${pedidos[position].total}"
-        Log.d("TAG", "${pedidos[position].fecha} => ${pedidos[position].total}")
-
-        return rowView
+    constructor(mContext: Context, mData: List<PedidoModelClass>) : super() {
+        this.mContext = mContext
+        this.mData = mData
     }
 
-    override fun getItem(position: Int): Any? {
-        return pedidos.get(position)
+
+    class MyViewHolder: RecyclerView.ViewHolder {
+        lateinit var fechaPed: TextView
+        lateinit var precioPed: TextView
+
+        constructor(itemView: View) : super(itemView) {
+            fechaPed = itemView.findViewById(R.id.textViewFechaPedido) as TextView
+            precioPed = itemView.findViewById(R.id.textViewTotalPedido) as TextView
+        }
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        var v: View = LayoutInflater.from(mContext).inflate(R.layout.pedido, parent, false)
+        var vHolder = MyViewHolder(v)
+        return vHolder
     }
 
-    override fun getCount(): Int {
-        return pedidos.size
+    override fun getItemCount(): Int {
+        return mData.size
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.fechaPed.text = mData.get(position).fecha
+        holder.precioPed.text = mData.get(position).total.toString()
+
     }
 }
