@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.luceromichael.vengappveci.ProductoHomeAdapter
@@ -41,8 +42,17 @@ class HomeFragment : Fragment() {
             textView.text = it
 
             productos = getProductsLinks()!!
-            productoHomeAdapter = ProductoHomeAdapter(this.requireContext(), productos, R.layout.item_producto)
-            recicleViewHome.layoutManager = LinearLayoutManager(activity)
+            productoHomeAdapter = ProductoHomeAdapter(
+                this.requireContext(),
+                productos,
+                R.layout.item_producto
+            )
+
+
+            recicleViewHome.layoutManager = GridLayoutManager(this.requireContext(), 3)
+
+            //recicleViewHome.layoutManager = LinearLayoutManager(activity)
+
             recicleViewHome.setAdapter(productoHomeAdapter)
 
             imageViewCarrito.setOnClickListener {
@@ -84,3 +94,4 @@ class HomeFragment : Fragment() {
 
 
 }
+
