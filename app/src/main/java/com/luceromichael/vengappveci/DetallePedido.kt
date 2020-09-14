@@ -13,7 +13,6 @@ class DetallePedido : AppCompatActivity() {
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val TAG = "DetallePedido"
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_pedido)
@@ -42,7 +41,7 @@ class DetallePedido : AppCompatActivity() {
     }
 
     fun saveData(id:String, cant:Int, total :Float){
-        var producto: ProductoModelClass = ProductoModelClass("", "0".toFloat(), "", "")
+        var producto: ProductoModelClass = ProductoModelClass("", "","0".toFloat(), "", "")
         var task = db.collection("productos").document(id)
             .get()
             .addOnFailureListener { exception ->
@@ -52,6 +51,7 @@ class DetallePedido : AppCompatActivity() {
             var result = doc.result
             if(result!!.exists()) {
                 producto = ProductoModelClass(
+                    result.id,
                     result.get("nombre").toString(),
                     result.get("precio").toString().toFloat(),
                     result.get("imagen").toString(),
