@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_detalle_pedido.*
 import kotlinx.android.synthetic.main.fragment_pedidos.*
-import kotlinx.android.synthetic.main.fragment_pedidos.buttonRegresar
 
 
 class DetallePedido : AppCompatActivity() {
@@ -56,27 +54,7 @@ class DetallePedido : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
             }
-            .addOnCompleteListener {doc ->
-                var result = doc.result
-                if(result!!.exists()) {
-                    producto = ProductoModelClass(
-                        result.get("nombre").toString(),
-                        result.get("precio").toString().toFloat(),
-                        result.get("imagen").toString(),
-                        result.get("detalle").toString()
-                    )
-                    //Log.d(TAG, "${result.id} => ${result.data}")
-                    listaDetPedido.add(
-                        DetallePedidoModelClass(
-                            producto,
-                            cant,
-                            total
-                        ))
-                }
-                var detallesPedidoAdaptador = ListProdInPedAdapter(this,listaDetPedido)
-                listViewDetallesPedido.adapter = detallesPedidoAdaptador
-            }
-
+        return producto
     }
 }
 

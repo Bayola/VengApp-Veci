@@ -47,9 +47,8 @@ class PedidosFragment : Fragment() {
                         document.data.get("total").toString().toFloat())
                     )
                 }
-
                 val inflater = this.layoutInflater
-                var pedidoAdaptador = ListPedidosAdapter(this,listaPedidos)
+                pedidoAdaptador = ListPedidosAdapter(this,listaPedidos)
                 listViewPedidos.adapter = pedidoAdaptador
             }
             .addOnFailureListener { exception ->
