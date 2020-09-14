@@ -33,9 +33,17 @@ class CarritoFragment : Fragment() {
         val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
         var pedido = PedidoModelClass(null, date, carrito, totalCarrito)
 
-        buttonHacerPed.setOnClickListener({
-            savePedido(PedidoModelClass("","",null, 0f))
-        })
+
+
+        //adaptador
+
+
+
+        buttonHacerPed.setOnClickListener {
+            savePedido(PedidoModelClass(currentUSer.user?.uid,date,carrito, totalCarrito))
+            carrito = arrayListOf<DetallePedidoModelClass>()
+            totalCarrito = "0".toFloat()
+        }
     }
 
     fun savePedido(carrito:PedidoModelClass){
