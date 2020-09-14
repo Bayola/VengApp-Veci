@@ -19,6 +19,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private lateinit var productos: Array<String>
+    private lateinit var nombres: Array<String>
+    private lateinit var precios: Array<String>
     private lateinit var homeViewModel: HomeViewModel
     private val layoutManager: RecyclerView.LayoutManager? = null
 
@@ -42,9 +44,14 @@ class HomeFragment : Fragment() {
             textView.text = it
 
             productos = getProductsLinks()!!
+            nombres = getProductsNames()!!
+            precios = getProductsPrices()!!
+
             productoHomeAdapter = ProductoHomeAdapter(
                 this.requireContext(),
                 productos,
+                nombres,
+                precios,
                 R.layout.item_producto
             )
 
@@ -92,6 +99,58 @@ class HomeFragment : Fragment() {
         )
     }
 
+    fun getProductsNames(): Array<String>? {
+        return arrayOf(
+            "pollo",
+            "cocacola",
+            "sprite",
+            "fanta",
+            "mandarina",
+            "cebolla",
+            "mani",
+            "lechuga",
+            "gallina",
+            "1miaz",
+            "1asdas",
+            "1asdasd",
+            "asdsad",
+            "1asdasd",
+            "1asdasd",
+            "1asdasd",
+            "1asdasd",
+            "1asdasd",
+            "1asdasd",
+            "2asdasd",
+            "2asdasd",
+            "2asdsd"
+        )
+    }
 
+    fun getProductsPrices(): Array<String>? {
+        return arrayOf(
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22"
+        )
+    }
 }
 
