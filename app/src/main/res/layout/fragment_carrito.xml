@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondogradiente"
-    tools:context=".PantallaCarrito">
+    tools:context=".ui.carrito.CarritoFragment">
 
     <ImageView
         android:id="@+id/imageView12"
