@@ -48,8 +48,8 @@ class HomeFragment : Fragment() {
             recicleViewHome.setAdapter(productoHomeAdapter)
 
             imageViewCarrito.setOnClickListener {
-                val intent = Intent(activity, CarritoFragment::class.java)
-                startActivity(intent)
+//                val intent = Intent(activity, CarritoFragment::class.java)
+//                startActivity(intent)
             }
 
         })

@@ -9,3 +9,4 @@ class DetallePedido : AppCompatActivity() {
         setContentView(R.layout.activity_detalle_pedido)
     }
 }
+
