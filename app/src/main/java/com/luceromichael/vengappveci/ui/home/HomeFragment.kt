@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
+import kotlinx.android.synthetic.main.activity_detalle_producto.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item_producto.*
 
@@ -76,12 +78,6 @@ class HomeFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
-
-
-            imageViewItemProduct.setOnClickListener{
-                val intent = Intent(activity, DetalleProducto::class.java)
-                startActivity(intent)
-            }
 
 
             imageViewCarrito.setOnClickListener {

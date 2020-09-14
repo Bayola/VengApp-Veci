@@ -42,5 +42,6 @@
     <string name="cerrar_sesi_n">Cerrar sesión</string>
     <string name="imageViewFondoLogin">imageViewFondoLogin</string>
     <string name="imageViewTiendaLogo">imageViewTiendaLogo</string>
+    <string name="imageViewProductoDetalleProducto">imageViewProductoDetalleProducto</string>
 
 </resources>
