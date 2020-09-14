@@ -10,12 +10,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
+import kotlinx.android.synthetic.main.activity_detalle_pedido.*
 import kotlinx.android.synthetic.main.fragment_carrito.*
+import kotlinx.android.synthetic.main.fragment_pedidos.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 
 class CarritoFragment : Fragment() {
+
+    private val TAG = "CarritoFragment"
+    val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    lateinit var carritoAdaptador:CarritoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,20 +31,21 @@ class CarritoFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_carrito, container, false)
     }
 
-    private val TAG = "CarritoFragment"
-    val db: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
         var pedido = PedidoModelClass(null, date, carrito, totalCarrito)
 
-
-
         //adaptador
         //lista productos = carrito
         //sumacarrito = totalcarrito
 
+        val inflater = this.layoutInflater
+        val rowHeaderView = inflater.inflate(R.layout.lista_productos_in_pedido, null, false)
+        listViewCarrito.addHeaderView(rowHeaderView)
+        carritoAdaptador = CarritoAdapter(this,carrito)
+        listViewCarrito.adapter = carritoAdaptador
 
 
         buttonHacerPed.setOnClickListener {
@@ -46,6 +53,7 @@ class CarritoFragment : Fragment() {
             carrito = arrayListOf<DetallePedidoModelClass>()
             totalCarrito = "0".toFloat()
         }
+
     }
 
     fun savePedido(carrito:PedidoModelClass){
@@ -87,4 +95,9 @@ class CarritoFragment : Fragment() {
             }
         }
     }
+
+    fun onClickRegresar() {
+        this.requireActivity().onBackPressed()
+    }
+
 }

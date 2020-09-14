@@ -44,7 +44,7 @@ class ProductoHomeAdapter(
             .with(context)
             .asBitmap()
             .load(imageUrl)
-            .into(object : SimpleTarget<Bitmap?>(100, 100) {
+             .into(object : SimpleTarget<Bitmap?>(100, 100) {
                 override fun onResourceReady(
                     resource: Bitmap,
                     transition: Transition<in Bitmap?>?
