@@ -11,24 +11,26 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:text="NOMBRE"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrecioCantidad"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrecio"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPrecioCantidad"
+        android:id="@+id/textViewCantidad"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="CANTIDAD"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrecioCantidad"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPrecio"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrecio"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewPrecioCantidad"
+        android:id="@+id/textViewPrecio"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:text="PRECIO"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSubtotal"
         app:layout_constraintEnd_toStartOf="@+id/textViewSubtotal"
         app:layout_constraintTop_toTopOf="parent" />
 
