@@ -11,3 +11,5 @@ lateinit var mAuth: FirebaseAuth
 var currentUSer: UserModelClass = UserModelClass("", "", "", null)
 lateinit var activity: MainActivity
 var state = 0
+var carrito = arrayListOf<DetallePedidoModelClass>()
+var totalCarrito = "0".toFloat()

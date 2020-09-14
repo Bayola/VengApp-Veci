@@ -17,6 +17,7 @@ import com.luceromichael.vengappveci.DetallePedidoModelClass
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.ProductoModelClass
 import com.luceromichael.vengappveci.R
+import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -88,6 +89,16 @@ class HomeFragment : Fragment() {
         return root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        imageViewCarrito.setOnClickListener {
+            val nextFrag = CarritoFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_carrito, nextFrag, "findThisFragment")
+                .addToBackStack(null)
+                .commit()
+        }
+    }
 
 }
-

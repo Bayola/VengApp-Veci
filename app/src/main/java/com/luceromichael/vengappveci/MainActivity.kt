@@ -91,7 +91,6 @@ class MainActivity : AppCompatActivity() {
     fun updateUI(user: FirebaseUser?) {
         if(user != null){
             state = 1
-            Toast.makeText(this, "Inicio de sesion exitoso.", Toast.LENGTH_LONG).show()
             db.collection("/users")
                 .whereEqualTo("userUID", user.uid)
                 .get()

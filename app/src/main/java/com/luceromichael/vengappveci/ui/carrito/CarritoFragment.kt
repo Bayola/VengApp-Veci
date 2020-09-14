@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
 import kotlinx.android.synthetic.main.fragment_carrito.*
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class CarritoFragment : Fragment() {
@@ -28,7 +30,8 @@ class CarritoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val date = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
+        var pedido = PedidoModelClass(null, date, carrito, totalCarrito)
 
         buttonHacerPed.setOnClickListener({
             savePedido(PedidoModelClass("","",null, 0f))

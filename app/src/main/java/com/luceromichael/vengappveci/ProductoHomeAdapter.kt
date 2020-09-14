@@ -1,6 +1,7 @@
 package com.luceromichael.vengappveci
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.util.Log
 import android.view.LayoutInflater
@@ -52,7 +53,22 @@ class ProductoHomeAdapter(
                     holder.image.setImageBitmap(resource)
                 }
             })
-
+        if(currentUSer.user !=null){
+            holder.image.setOnClickListener {
+                val intent = Intent(context, DetalleProducto::class.java)
+                intent.putExtra("id", productos[position].id)
+                intent.putExtra("name", productos[position].name)
+                intent.putExtra("image", productos[position].image)
+                intent.putExtra("price", productos[position].price.toString())
+                intent.putExtra("detail", productos[position].detail)
+                context.startActivity(intent)
+            }
+        }
+        holder.image.setOnClickListener {
+            val intent = Intent(context, DetalleProducto::class.java)
+            intent.putExtra("pedido", "")
+            context.startActivity(intent)
+        }
 
     }
 
