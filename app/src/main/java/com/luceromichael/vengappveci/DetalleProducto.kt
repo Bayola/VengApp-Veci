@@ -14,6 +14,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_detalle_pedido.*
 import kotlinx.android.synthetic.main.activity_detalle_producto.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class DetalleProducto : AppCompatActivity() {
     var cant = 0
@@ -84,9 +85,7 @@ class DetalleProducto : AppCompatActivity() {
             carrito.add(DetallePedidoModelClass(producto, cant, (cant*producto.price)))
             totalCarrito += cant*producto.price
             Log.d("Producto: ", DetallePedidoModelClass(producto, cant, (cant*producto.price)).toString())
-
-//            val intent = Intent(requireContext(), MainActivity::class.java)
-//            startActivity(intent)
+            super.onBackPressed()
         }
     }
 }

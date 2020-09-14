@@ -17,8 +17,8 @@ class ListProdInPedAdapter (private val context: Activity, private val detallesP
         val textViewSubtotal = rowView.findViewById<TextView>(R.id.textViewSubtotal)
         textViewName.text = "${detallesPedido[position].producto.name}"
         textViewCantidad.text = "${detallesPedido[position].cant}"
-        textViewPrecio.text = "${detallesPedido[position].producto.price}"
-        textViewSubtotal.text = "${detallesPedido[position].subTotal}"
+        textViewPrecio.text = "$${detallesPedido[position].producto.price}"
+        textViewSubtotal.text = "$${detallesPedido[position].subTotal}"
         return rowView
     }
 

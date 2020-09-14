@@ -67,7 +67,7 @@ class DetallePedido : AppCompatActivity() {
                 )
                 Log.d(TAG, "${result.id} => ${result.data}")
                 suma += producto.price*cant
-                textViewTotalDetPed.text = "Total: " + suma.toString()
+                textViewTotalDetPed.text = "Total: $" + suma.toString()
                 listaDetPedido.add(
                     DetallePedidoModelClass(
                         producto,

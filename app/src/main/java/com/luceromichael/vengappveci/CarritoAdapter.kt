@@ -19,8 +19,8 @@ class CarritoAdapter(private val context: CarritoFragment, private val detalleCa
 
         textViewName.text = "${detalleCarrito[position].producto.name}"
         textViewCantidad.text = "${detalleCarrito[position].cant.toString()}"
-        textViewPrecio.text = "${detalleCarrito[position].producto.price}"
-        textViewSubtotal.text = "${detalleCarrito[position].subTotal}"
+        textViewPrecio.text = "$${detalleCarrito[position].producto.price}"
+        textViewSubtotal.text = "$${detalleCarrito[position].subTotal}"
         return rowView
     }
 

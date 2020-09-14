@@ -57,8 +57,8 @@
     <string name="textViewPrecioItemProduct">PrecioProducto</string>
     <string name="textViewNombre">NOMBRE</string>
     <string name="textViewSubtotal">SUBTOTAL</string>
-    <string name="textViewFechaPedido">Fecha</string>
-    <string name="textViewTotalPedido">Total</string>
+    <string name="textViewFechaPedido">FECHA</string>
+    <string name="textViewTotalPedido">TOTAL</string>
     <string name="textViewNombreProducto">Nombre</string>
     <string name="textViewPrecioProducto">Precio</string>
     <string name="imageViewItemProduct">imageViewItemProduct</string>

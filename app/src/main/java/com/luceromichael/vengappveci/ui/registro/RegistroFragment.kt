@@ -68,6 +68,11 @@ class RegistroFragment : Fragment() {
                         }
                 }
             })
+
+        val buttonCancelar = view.findViewById<Button>(R.id.buttonCancelar)
+        buttonCancelar.setOnClickListener{
+            this.activity?.onBackPressed()
+        }
     }
 
     fun updateUI(user: FirebaseUser?, name:String, email:String, phone:String) {
