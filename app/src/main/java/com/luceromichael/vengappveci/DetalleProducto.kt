@@ -12,6 +12,7 @@ import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_detalle_pedido.*
+import kotlinx.android.synthetic.main.activity_detalle_producto.*
 
 class DetalleProducto : AppCompatActivity() {
     var cant = 0
@@ -63,7 +64,25 @@ class DetalleProducto : AppCompatActivity() {
             }
 
         cantidad.text = cant.toString()
+        var menos = findViewById<ImageView>(R.id.imageViewMenosCant)
+        var mas = findViewById<ImageView>(R.id.imageViewMasCant)
 
 
+        menos.setOnClickListener {
+            if (cant>0){
+                cant--
+                cantidad.text = cant.toString()
+            }
+        }
+        mas.setOnClickListener {
+            cant++
+            cantidad.text = cant.toString()
+        }
+
+        buttonAgregar.setOnClickListener {
+            carrito.add(DetallePedidoModelClass(producto, cant, (cant*producto.price)))
+            totalCarrito += cant*producto.price
+            Log.d("Producto: ", DetallePedidoModelClass(producto, cant, (cant*producto.price)).toString())
+        }
     }
 }

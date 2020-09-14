@@ -14,6 +14,7 @@ class DetallePedido : AppCompatActivity() {
     lateinit var idPed : String
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val TAG = "DetallePedido"
+    var suma = "0".toFloat()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +42,8 @@ class DetallePedido : AppCompatActivity() {
                 Log.d(TAG, "Error getting documents: ", exception)
             }
 
-
-
         buttonRegresar.setOnClickListener{
+            suma = "0".toFloat()
             super.onBackPressed()
         }
     }
@@ -66,6 +66,8 @@ class DetallePedido : AppCompatActivity() {
                     result.get("detalle").toString()
                 )
                 Log.d(TAG, "${result.id} => ${result.data}")
+                suma += producto.price*cant
+                textViewTotalDetPed.text = "Total: " + suma.toString()
                 listaDetPedido.add(
                     DetallePedidoModelClass(
                         producto,
