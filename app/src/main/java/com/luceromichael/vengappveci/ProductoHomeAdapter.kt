@@ -52,6 +52,8 @@ class ProductoHomeAdapter(
                     holder.image.setImageBitmap(resource)
                 }
             })
+
+
     }
 
     override fun getItemCount(): Int {
