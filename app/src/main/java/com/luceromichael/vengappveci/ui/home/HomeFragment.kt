@@ -1,6 +1,5 @@
 package com.luceromichael.vengappveci.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.R
-import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
