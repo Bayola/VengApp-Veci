@@ -32,12 +32,13 @@ class PedidosFragment : Fragment() {
     ): View? {
         v = inflater.inflate(R.layout.fragment_pedidos, container, false)
         rvpedidos = v.findViewById(R.id.listViewPedidos)
-
         //llenarpedidos
         db.collection("pedidos")
             .whereEqualTo("userUID", currentUSer.user?.uid)
             .get()
             .addOnSuccessListener { result ->
+                val rowHeaderView = inflater.inflate(R.layout.pedido, null, false)
+                listViewPedidos.addHeaderView(rowHeaderView)
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
                     listaPedidos.add(PedidoModelClass(document.data.get("date").toString(),null,document.data.get("total").toString().toFloat()))
