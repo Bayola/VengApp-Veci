@@ -38,17 +38,19 @@
                 android:layout_width="283dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
+                android:autofillHints=""
                 android:background="@drawable/bodes"
-                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:drawableStart="@android:drawable/ic_menu_search"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/editTextBuscar" />
+                android:hint="@string/editTextBuscar"
+                android:inputType="textPersonName" />
 
             <ImageView
                 android:id="@+id/imageViewCarrito"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
+                android:contentDescription="@string/carrito_de_compras"
                 app:srcCompat="@drawable/carrito" />
 
         </LinearLayout>

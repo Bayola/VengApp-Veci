@@ -61,9 +61,7 @@
     <string name="textViewTotalPedido">Total</string>
     <string name="textViewNombreProducto">Nombre</string>
     <string name="textViewPrecioProducto">Precio</string>
-
-
-
+    <string name="imageViewItemProduct">imageViewItemProduct</string>
 
 
 </resources>
