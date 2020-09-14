@@ -43,7 +43,6 @@ class PedidosFragment : Fragment() {
                     Log.d(TAG, "${document.id} => ${document.data}")
                     listaPedidos.add(PedidoModelClass(document.id,document.data.get("date").toString(),null,document.data.get("total").toString().toFloat()))
                 }
-                val inflater = this.layoutInflater
                 pedidoAdaptador = ListPedidosAdapter(this,listaPedidos)
                 listViewPedidos.adapter = pedidoAdaptador
             }

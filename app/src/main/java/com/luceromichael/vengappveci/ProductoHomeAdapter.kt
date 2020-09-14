@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 
 class ProductoHomeAdapter(
     private val context: Context,
-    private val animals: Array<String>,
+    private val productos: Array<String>,
     private val layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
@@ -26,11 +26,11 @@ class ProductoHomeAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-        Glide.with(context).load(animals[position]).into(holder.image)
+        Glide.with(context).load(productos[position]).into(holder.image)
     }
 
     override fun getItemCount(): Int {
-        return animals.size
+        return productos.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
