@@ -61,6 +61,7 @@ class ProductoHomeAdapter(
                 intent.putExtra("image", productos[position].image)
                 intent.putExtra("price", productos[position].price.toString())
                 intent.putExtra("detail", productos[position].detail)
+
                 context.startActivity(intent)
             }
         }
