@@ -20,13 +20,13 @@
 
     <ImageView
         android:id="@+id/imageView17"
-        android:layout_width="72dp"
-        android:layout_height="88dp"
+        android:layout_width="60dp"
+        android:layout_height="76dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewNumeroP"
         app:layout_constraintEnd_toStartOf="@+id/textViewNumeroP"
         app:layout_constraintTop_toTopOf="@+id/textViewNumeroP"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@drawable/removeicon" />
 
     <TextView
         android:id="@+id/textViewNombreP"
@@ -84,11 +84,11 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="72dp"
-        android:layout_height="88dp"
+        android:layout_width="60dp"
+        android:layout_height="76dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewNumeroP"
         app:layout_constraintStart_toEndOf="@+id/textViewNumeroP"
         app:layout_constraintTop_toTopOf="@+id/textViewNumeroP"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@drawable/addicon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

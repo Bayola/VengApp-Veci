@@ -1,5 +1,6 @@
 package com.luceromichael.vengappveci.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,11 +14,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.luceromichael.vengappveci.DetallePedidoModelClass
-import com.luceromichael.vengappveci.ProductoHomeAdapter
-import com.luceromichael.vengappveci.ProductoModelClass
-import com.luceromichael.vengappveci.R
+import com.luceromichael.vengappveci.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.item_producto.*
 
 
 class HomeFragment : Fragment() {
@@ -77,6 +76,13 @@ class HomeFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
+
+
+            imageViewItemProduct.setOnClickListener{
+                val intent = Intent(activity, DetalleProducto::class.java)
+                startActivity(intent)
+            }
+
 
             imageViewCarrito.setOnClickListener {
 //                val intent = Intent(activity, CarritoFragment::class.java)
