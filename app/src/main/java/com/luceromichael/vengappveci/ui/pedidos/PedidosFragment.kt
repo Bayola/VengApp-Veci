@@ -1,5 +1,6 @@
 package com.luceromichael.vengappveci.ui.pedidos
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,9 +22,9 @@ import kotlinx.android.synthetic.main.fragment_pedidos.*
 class PedidosFragment : Fragment() {
     var listaPedidos = arrayListOf<PedidoModelClass>()
     lateinit var v: View
-    lateinit var rvpedidos: ListView
-    private val TAG = "CarritoFragment"
+    private val TAG = "PedidosFragment"
     val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    lateinit var pedidoAdaptador:ListPedidosAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +32,8 @@ class PedidosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_pedidos, container, false)
-        rvpedidos = v.findViewById(R.id.listViewPedidos)
         //llenarpedidos
-        db.collection("pedidos")
+        db.collection("/pedidos")
             .whereEqualTo("userUID", currentUSer.user?.uid)
             .get()
             .addOnSuccessListener { result ->
@@ -41,18 +41,24 @@ class PedidosFragment : Fragment() {
                 listViewPedidos.addHeaderView(rowHeaderView)
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
-                    listaPedidos.add(PedidoModelClass(document.data.get("date").toString(),null,document.data.get("total").toString().toFloat()))
-                    val inflater = this.layoutInflater
-                    var pedidoAdaptador = ListPedidosAdapter(this,listaPedidos)
-                    listViewPedidos.adapter = pedidoAdaptador
+                    listaPedidos.add(PedidoModelClass(document.id,document.data.get("date").toString(),null,document.data.get("total").toString().toFloat()))
                 }
+                pedidoAdaptador = ListPedidosAdapter(this,listaPedidos)
+                listViewPedidos.adapter = pedidoAdaptador
             }
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
             }
-
         return v
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        listViewPedidos.setOnItemClickListener { parent, view, position, id ->
+            val pedido:PedidoModelClass = listaPedidos[position-1]
+            val intent = Intent(requireContext(), DetallePedido::class.java)
+            intent.putExtra("pedido", pedido.id)
+            startActivity(intent)
+        }
+    }
 }

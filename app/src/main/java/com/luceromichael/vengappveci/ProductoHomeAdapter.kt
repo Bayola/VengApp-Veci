@@ -1,6 +1,7 @@
 package com.luceromichael.vengappveci
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +9,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.SimpleTarget
+import com.bumptech.glide.request.transition.Transition
+
 
 
 class ProductoHomeAdapter(
     private val context: Context,
-    private val animals: Array<String>,
-    private val nombres: Array<String>,
-    private val precios: Array<String>,
+
+    private val productos: Array<ProductoModelClass>,
 
     private val layout: Int
 ) : RecyclerView.Adapter<ProductoHomeAdapter.ViewHolder>() {
@@ -29,16 +32,30 @@ class ProductoHomeAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-        Glide.with(context).load(animals[position]).into(holder.image)
-        holder.name.setText(nombres[position])
-        holder.price.setText(precios[position])
+
+        holder.name.text =  "${productos[position].name}"
+        holder.price.text =  "${productos[position].price}"
+        Glide
+            .with(context)
+            .asBitmap()
+            .load("${productos[position].image}")
+            .into(object : SimpleTarget<Bitmap?>(100, 100) {
+                override fun onResourceReady(
+                    resource: Bitmap,
+                    transition: Transition<in Bitmap?>?
+                ) {
+                    holder.image.setImageBitmap(resource)
+                }
+            })
+
     }
 
     override fun getItemCount(): Int {
-        return animals.size
+        return productos.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         var image: ImageView
         var name: TextView
         var price: TextView
@@ -50,7 +67,7 @@ class ProductoHomeAdapter(
             image =
                 itemView.findViewById<View>(R.id.imageViewItemProduct) as ImageView
         }
-    }
 
+    }
 }
 
