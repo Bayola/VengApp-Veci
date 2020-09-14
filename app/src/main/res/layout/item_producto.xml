@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+
     android:orientation="vertical">
 
 
     <ImageView
+        android:id="@+id/imageViewItemProduct"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"
         android:scaleType="centerCrop"
-        android:id="@+id/imageViewItemProduct"/>
+        android:src="@mipmap/ic_launcher" />
+
     <TextView
+        android:id="@+id/textViewNameItemProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NombreProducto"
         android:layout_below="@id/imageViewItemProduct"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textViewNameItemProduct"/>
+        android:text="NombreProducto" />
 
 </LinearLayout>

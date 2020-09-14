@@ -9,6 +9,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +35,7 @@
 
             <EditText
                 android:id="@+id/editTextBuscar"
-                android:layout_width="332dp"
+                android:layout_width="283dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/bodes"
@@ -57,10 +60,10 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recicleViewHome"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
-                android:id="@+id/recicleViewHome"
 
                 />
         </RelativeLayout>

@@ -9,26 +9,24 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.luceromichael.vengappveci.PantallaCarrito
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.R
+import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
 class HomeFragment : Fragment() {
 
-//    private lateinit var gridView: GridView
     private lateinit var productos: Array<String>
     private lateinit var homeViewModel: HomeViewModel
     private val layoutManager: RecyclerView.LayoutManager? = null
 
-//    var nombresProductos = arrayOf("nombre1")
-//    var imagenesProductos = intArrayOf(R.drawable.logovengapp)
+
    private var productoHomeAdapter : ProductoHomeAdapter? = null
 
-//    var EXTRA_SPACE_PHOTO = "HomeFragment.SPACE_PHOTO"
-//    private var mImageView: ImageView? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,23 +42,13 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
 
-//            gridView = view?.findViewById(R.id.gridViewHome)!!
-//
-//            productoHomeAdapter = ProductoHomeAdapter(nombresProductos, imagenesProductos, this.context)
-//            gridView.setAdapter(productoHomeAdapter);
-
-//            imageView8.setOnClickListener {
-//                val intent = Intent(activity, DetalleProducto::class.java)
-//                startActivity(intent)
-//            }
             productos = getProductsLinks()!!
             productoHomeAdapter = ProductoHomeAdapter(this.requireContext(), productos, R.layout.item_producto)
+            recicleViewHome.layoutManager = LinearLayoutManager(activity)
             recicleViewHome.setAdapter(productoHomeAdapter)
-            //Glide.with(this).load(getProductsLinks()).placeholder(R.drawable.loadproduct).into(imageViewItemProduct)
-
 
             imageViewCarrito.setOnClickListener {
-                val intent = Intent(activity, PantallaCarrito::class.java)
+                val intent = Intent(activity, CarritoFragment::class.java)
                 startActivity(intent)
             }
 
