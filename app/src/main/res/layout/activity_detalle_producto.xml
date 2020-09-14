@@ -8,17 +8,6 @@
     tools:context=".DetalleProducto">
 
     <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="0dp"
-        android:layout_height="312dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_light_transparent" />
-
-    <ImageView
         android:id="@+id/imageView17"
         android:layout_width="60dp"
         android:layout_height="76dp"
@@ -44,17 +33,16 @@
         android:layout_height="172dp"
         android:layout_marginTop="100dp"
         android:contentDescription="@string/imageViewProductoDetalleProducto"
-        app:layout_constraintEnd_toEndOf="@+id/imageView13"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?android:attr/textSelectHandle" />
 
     <TextView
-        android:id="@+id/textViewCantidad"
+        android:id="@+id/textViewPrecioP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:text="@string/textViewCantidad"
         app:layout_constraintEnd_toEndOf="@+id/textViewNombreP"
         app:layout_constraintStart_toStartOf="@+id/textViewNombreP"
@@ -64,24 +52,24 @@
         android:id="@+id/buttonAgregar"
         android:layout_width="204dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/bordesboton"
         android:text="@string/buttonAgregar"
         android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView13"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewNumeroP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/textViewNumeroP"
         android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewCantidad"
-        app:layout_constraintStart_toStartOf="@+id/textViewCantidad"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCantidad" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonAgregar"
+        app:layout_constraintStart_toStartOf="@+id/buttonAgregar" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -92,4 +80,14 @@
         app:layout_constraintStart_toEndOf="@+id/textViewNumeroP"
         app:layout_constraintTop_toTopOf="@+id/textViewNumeroP"
         app:srcCompat="@drawable/addicon" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPrecioP"
+        app:layout_constraintStart_toStartOf="@+id/textViewPrecioP"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPrecioP" />
 </androidx.constraintlayout.widget.ConstraintLayout>
