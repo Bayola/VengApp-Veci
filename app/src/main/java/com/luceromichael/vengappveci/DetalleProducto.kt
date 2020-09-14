@@ -18,7 +18,7 @@ class DetalleProducto : AppCompatActivity() {
         )
 
         var nombre = findViewById<TextView>(R.id.textViewNombreP)
-        var precio = findViewById<TextView>(R.id.textViewPrecioP)
+        var precio = findViewById<TextView>(R.id.textViewPrecioCantidad)
         var detalle = findViewById<TextView>(R.id.textViewNombreP)
         var cantidad = findViewById<TextView>(R.id.textViewNombreP)
         var image = findViewById<ImageView>(R.id.imageViewProductoDetalleProducto)

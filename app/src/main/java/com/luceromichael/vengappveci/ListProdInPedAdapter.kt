@@ -12,8 +12,8 @@ class ListProdInPedAdapter (private val context: Activity, private val detallesP
         val rowView = inflater.inflate(R.layout.lista_productos_in_pedido, null, true)
 
         val textViewName = rowView.findViewById<TextView>(R.id.textViewNombre)
-        val textViewCantidad = rowView.findViewById<TextView>(R.id.textViewPrecioP)
-        val textViewPrecio = rowView.findViewById<TextView>(R.id.textViewPrecioP)
+        val textViewCantidad = rowView.findViewById<TextView>(R.id.textViewPrecioCantidad)
+        val textViewPrecio = rowView.findViewById<TextView>(R.id.textViewPrecioCantidad)
         val textViewSubtotal = rowView.findViewById<TextView>(R.id.textViewSubtotal)
         textViewName.text = "${detallesPedido[position].producto.name}"
         textViewCantidad.text = "${detallesPedido[position].cant}"
