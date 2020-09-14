@@ -1,10 +1,12 @@
 package com.luceromichael.vengappveci.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -89,16 +91,6 @@ class HomeFragment : Fragment() {
         return root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        imageViewCarrito.setOnClickListener {
-            val nextFrag = CarritoFragment()
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_carrito, nextFrag, "findThisFragment")
-                .addToBackStack(null)
-                .commit()
-        }
-    }
 
 }
+
