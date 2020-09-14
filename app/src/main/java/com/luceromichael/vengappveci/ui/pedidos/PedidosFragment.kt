@@ -60,8 +60,9 @@ class PedidosFragment : Fragment() {
             startActivity(intent)
         }
         buttonRegresar.setOnClickListener{
-            val intent = Intent(requireContext(), LoginFragment::class.java)
-            startActivity(intent)
+//            val intent = Intent(requireContext(), LoginFragment::class.java)
+//            startActivity(intent)
+            this.activity?.onBackPressed()
         }
     }
 }

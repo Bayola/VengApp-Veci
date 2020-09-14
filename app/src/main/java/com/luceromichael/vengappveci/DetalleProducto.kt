@@ -84,9 +84,6 @@ class DetalleProducto : AppCompatActivity() {
             carrito.add(DetallePedidoModelClass(producto, cant, (cant*producto.price)))
             totalCarrito += cant*producto.price
             Log.d("Producto: ", DetallePedidoModelClass(producto, cant, (cant*producto.price)).toString())
-
-//            val intent = Intent(requireContext(), MainActivity::class.java)
-//            startActivity(intent)
         }
     }
 }

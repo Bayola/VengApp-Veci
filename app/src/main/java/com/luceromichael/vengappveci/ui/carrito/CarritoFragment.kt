@@ -1,18 +1,17 @@
 package com.luceromichael.vengappveci.ui.carrito
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.*
-import kotlinx.android.synthetic.main.activity_detalle_pedido.*
+import com.luceromichael.vengappveci.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_carrito.*
-import kotlinx.android.synthetic.main.fragment_pedidos.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -52,6 +51,11 @@ class CarritoFragment : Fragment() {
             savePedido(PedidoModelClass(currentUSer.user?.uid,date,carrito, totalCarrito))
             carrito = arrayListOf<DetallePedidoModelClass>()
             totalCarrito = "0".toFloat()
+        }
+
+        val buttonRegresar = view.findViewById<Button>(R.id.buttonRegresar)
+        buttonRegresar.setOnClickListener{
+            this.activity?.onBackPressed()
         }
 
     }
@@ -96,8 +100,8 @@ class CarritoFragment : Fragment() {
         }
     }
 
-    fun onClickRegresar() {
-        this.requireActivity().onBackPressed()
-    }
-
 }
+
+
+
+
