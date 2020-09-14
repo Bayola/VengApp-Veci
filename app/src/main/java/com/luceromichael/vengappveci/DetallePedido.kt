@@ -20,6 +20,9 @@ class DetallePedido : AppCompatActivity() {
         db.collection("pedidos/"+idPed+"/detallePedidos")
             .get()
             .addOnSuccessListener { result ->
+                val inflater = this.layoutInflater
+                val rowHeaderView = inflater.inflate(R.layout.lista_productos_in_pedido, null, false)
+                listViewDetallesPedido.addHeaderView(rowHeaderView)
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
                     saveData(
@@ -28,6 +31,9 @@ class DetallePedido : AppCompatActivity() {
                         document.data.get("total").toString().toFloat()
                     )
                 }
+
+                Log.d(TAG, listaDetPedido.toString())
+
             }
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
