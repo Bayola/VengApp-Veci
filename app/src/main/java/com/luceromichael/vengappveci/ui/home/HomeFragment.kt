@@ -1,25 +1,20 @@
 package com.luceromichael.vengappveci.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.luceromichael.vengappveci.DetallePedidoModelClass
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.ProductoModelClass
 import com.luceromichael.vengappveci.R
-import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
