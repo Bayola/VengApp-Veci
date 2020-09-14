@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var productos: Array<String>
+    private lateinit var productos: Array<ProductoModelClass>
     var listproductos = arrayListOf<ProductoModelClass>()
     private lateinit var homeViewModel: HomeViewModel
     private val layoutManager: RecyclerView.LayoutManager? = null
@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
                 .get()
                 .addOnSuccessListener { result ->
                     for (document in result) {
+                        Log.d(TAG, "${document.id} => ${document.data}")
                         listproductos.add(
                             ProductoModelClass(
                             document.data.get("nombre").toString(),
@@ -60,25 +61,24 @@ class HomeFragment : Fragment() {
                             document.data.get("detalle").toString()
                         ))
                     }
+                    productos = listproductos.toTypedArray()
+                    productoHomeAdapter = ProductoHomeAdapter(
+                        this.requireContext(),
+                        productos,
+                        R.layout.item_producto
+                    )
+                    recicleViewHome.layoutManager = GridLayoutManager(this.requireContext(), 3)
+                    recicleViewHome.setAdapter(productoHomeAdapter)
                 }
                 .addOnFailureListener { exception ->
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
 
 
-            productos = getProductsLinks()!!
-            productoHomeAdapter = ProductoHomeAdapter(
-                this.requireContext(),
-                productos,
-                R.layout.item_producto
-            )
 
 
-            recicleViewHome.layoutManager = GridLayoutManager(this.requireContext(), 3)
 
-            //recicleViewHome.layoutManager = LinearLayoutManager(activity)
 
-            recicleViewHome.setAdapter(productoHomeAdapter)
 
             imageViewCarrito.setOnClickListener {
 //                val intent = Intent(activity, CarritoFragment::class.java)

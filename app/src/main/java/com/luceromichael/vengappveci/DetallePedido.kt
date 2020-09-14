@@ -46,19 +46,16 @@ class DetallePedido : AppCompatActivity() {
 
     fun getProduct(id:String):ProductoModelClass?{
         var producto = ProductoModelClass("Not found","0".toFloat(),"","Not found")
-        db.collection("productos")
+        db.collection("productos").document(id)
             .get()
             .addOnSuccessListener { result ->
-                for (document in result) {
-                    if(document.id.equals(id)){
+                    Log.d(TAG, "${result.id} => ${result.data}")
                         producto = ProductoModelClass(
-                            document.data.get("nombre").toString(),
-                            document.data.get("precio").toString().toFloat(),
-                            document.data.get("image").toString(),
-                            document.data.get("detalle").toString()
+                            result.get("nombre").toString(),
+                            result.get("precio").toString().toFloat(),
+                            result.get("image").toString(),
+                            result.get("detalle").toString()
                         )
-                    }
-                }
             }
             .addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
