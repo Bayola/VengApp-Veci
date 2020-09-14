@@ -76,6 +76,7 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
 
+
             imageViewCarrito.setOnClickListener {
 //                val intent = Intent(activity, CarritoFragment::class.java)
 //                startActivity(intent)
