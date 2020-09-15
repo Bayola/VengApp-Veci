@@ -1,6 +1,6 @@
 package com.luceromichael.vengappveci.ui.home
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -21,7 +20,6 @@ import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.ProductoModelClass
 import com.luceromichael.vengappveci.R
 import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
-import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -83,6 +81,13 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
 
+            imageViewCarrito.setOnClickListener {
+                val nextFrag = CarritoFragment()
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.nav_host_fragment, nextFrag, "findThisFragment")
+                    .addToBackStack(null)
+                    .commit()
+            }
 
             buscar = view?.findViewById(R.id.editTextBuscar)!!
             buscar.addTextChangedListener(object : TextWatcher {

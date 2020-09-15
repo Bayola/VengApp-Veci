@@ -83,10 +83,12 @@ class DetalleProducto : AppCompatActivity() {
         }
 
         buttonAgregar.setOnClickListener {
-            carrito.add(DetallePedidoModelClass(producto, cant, (cant*producto.price)))
-            totalCarrito += cant*producto.price
-            Log.d("Producto: ", DetallePedidoModelClass(producto, cant, (cant*producto.price)).toString())
-            super.onBackPressed()
+            if(cant>0){
+                carrito.add(DetallePedidoModelClass(producto, cant, (cant*producto.price)))
+                totalCarrito += cant*producto.price
+                Log.d("Producto: ", DetallePedidoModelClass(producto, cant, (cant*producto.price)).toString())
+                super.onBackPressed()
+            }
         }
     }
 }
