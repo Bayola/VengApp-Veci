@@ -52,8 +52,6 @@ class CarritoFragment : Fragment() {
         buttonHacerPed.setOnClickListener {
             if(carrito.size>0){
                 savePedido(PedidoModelClass(currentUSer.user?.uid,date,carrito, totalCarrito))
-                carrito = arrayListOf<DetallePedidoModelClass>()
-                totalCarrito = "0".toFloat()
                 this.activity?.onBackPressed()
             }
         }
@@ -76,12 +74,19 @@ class CarritoFragment : Fragment() {
             .addOnSuccessListener { documentReference ->
                 Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
                 saveDetalle(documentReference.id, carrito.productList)
-                Toast.makeText(context, "Pedido completado.", Toast.LENGTH_LONG).show()
+                Toast.makeText(contexto, "Pedido completado.", Toast.LENGTH_LONG).show()
             }
             .addOnFailureListener { e ->
                 Log.w(TAG, "Error adding document", e)
-                Toast.makeText(context, "Error al hacer pedido.", Toast.LENGTH_LONG).show()
+                Toast.makeText(contexto, "Error al hacer pedido.", Toast.LENGTH_LONG).show()
+            }.addOnCompleteListener{t->
+                deleteCarrito()
             }
+    }
+
+    fun deleteCarrito(){
+        totalCarrito = "0".toFloat()
+        carrito = arrayListOf<DetallePedidoModelClass>()
     }
 
     fun saveDetalle(pedidoID:String, productList: ArrayList<DetallePedidoModelClass>?){
