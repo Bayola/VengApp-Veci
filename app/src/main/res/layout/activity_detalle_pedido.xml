@@ -35,10 +35,11 @@
 
     <TextView
         android:id="@+id/textViewTotalDetPed"
-        android:layout_width="193dp"
-        android:layout_height="36dp"
+        android:layout_width="419dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="36dp"
         android:text="@string/textViewTotalDetPed"
+        android:textAlignment="center"
         android:textColor="#1E8A0B"
         android:textSize="30sp"
         android:textStyle="bold"
