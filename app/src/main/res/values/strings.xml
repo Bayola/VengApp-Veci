@@ -62,6 +62,10 @@
     <string name="textViewNombreProducto">Nombre</string>
     <string name="textViewPrecioProducto">Precio</string>
     <string name="imageViewItemProduct">imageViewItemProduct</string>
+    <string name="textViewPrecioP2">$</string>
+    <string name="imageViewMenosCant">imageViewMenosCant</string>
+    <string name="imageViewMasCant">imageViewMasCant</string>
+    <string name="textviewDetalleP">detalle</string>
 
 
 </resources>
