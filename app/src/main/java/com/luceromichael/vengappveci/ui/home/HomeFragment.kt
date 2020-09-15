@@ -1,5 +1,6 @@
 package com.luceromichael.vengappveci.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -19,6 +20,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.luceromichael.vengappveci.ProductoHomeAdapter
 import com.luceromichael.vengappveci.ProductoModelClass
 import com.luceromichael.vengappveci.R
+import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -52,10 +55,6 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
 
-
-
-
-
             db.collection("productos")
                 .get()
                 .addOnSuccessListener { result ->
@@ -83,11 +82,6 @@ class HomeFragment : Fragment() {
                 .addOnFailureListener { exception ->
                     Log.d(TAG, "Error getting documents: ", exception)
                 }
-
-            imageViewCarrito.setOnClickListener {
-                //val intent = Intent(activity, com.luceromichael.vengappveci.ui.login.CarritoFragment::class.java)
-                //startActivity(intent)
-            }
 
 
             buscar = view?.findViewById(R.id.editTextBuscar)!!

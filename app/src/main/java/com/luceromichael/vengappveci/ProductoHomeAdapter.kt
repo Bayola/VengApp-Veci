@@ -42,6 +42,7 @@ class ProductoHomeAdapter(
         Glide
             .with(context)
             .asBitmap()
+            .placeholder(R.drawable.loadproduct)
             .load(imageUrl)
              .into(object : SimpleTarget<Bitmap?>(100, 100) {
                  override fun onResourceReady(

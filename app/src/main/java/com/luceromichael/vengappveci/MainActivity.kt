@@ -19,6 +19,9 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
+import com.luceromichael.vengappveci.ui.carrito.CarritoFragment
+import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.nav_header_main.*
 
 
@@ -48,6 +51,12 @@ class MainActivity : AppCompatActivity() {
         login(false)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+//        imageViewCarrito.setOnClickListener {
+//            val intent = Intent(nav_host_fragment.context, CarritoFragment::class.java)
+//            startActivity(intent)
+//        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
