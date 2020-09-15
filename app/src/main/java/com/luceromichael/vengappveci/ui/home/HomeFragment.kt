@@ -115,7 +115,7 @@ class HomeFragment : Fragment() {
     fun filtrar(texto: String) {
         val filtrarLista: ArrayList<ProductoModelClass> = ArrayList()
         for (product in productos) {
-            Log.d("mensaje de coprovacion",product.name)
+            Log.d("mensaje de comprobacion",product.name)
 
 
             if (product.name.toLowerCase().contains(texto.toLowerCase().trim())) {
