@@ -46,7 +46,7 @@ class CarritoFragment : Fragment() {
         carritoAdaptador = CarritoAdapter(this,carrito)
         listViewCarrito.adapter = carritoAdaptador
 
-        textViewTotalCarrito.text = "Total= $"+ totalCarrito.toString()
+        textViewTotalCarrito.text = "Total: $"+ totalCarrito.toString()
 
 
         buttonHacerPed.setOnClickListener {
