@@ -109,7 +109,6 @@ class CarritoFragment : Fragment() {
             }
         }
     }
-
 }
 
 
