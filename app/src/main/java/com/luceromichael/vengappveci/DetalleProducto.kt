@@ -52,6 +52,7 @@ class DetalleProducto : AppCompatActivity() {
                     Glide
                         .with(this)
                         .asBitmap()
+                        .placeholder(R.drawable.loadproduct)
                         .load(producto.image)
                         .into(object : SimpleTarget<Bitmap?>(191, 172) {
                             override fun onResourceReady(

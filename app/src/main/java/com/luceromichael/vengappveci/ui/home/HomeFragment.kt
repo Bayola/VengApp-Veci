@@ -1,5 +1,6 @@
 package com.luceromichael.vengappveci.ui.home
 
+
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -87,7 +88,6 @@ class HomeFragment : Fragment() {
                     .addToBackStack(null)
                     .commit()
             }
-
 
             buscar = view?.findViewById(R.id.editTextBuscar)!!
             buscar.addTextChangedListener(object : TextWatcher {
