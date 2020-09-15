@@ -50,9 +50,12 @@ class CarritoFragment : Fragment() {
 
 
         buttonHacerPed.setOnClickListener {
-            savePedido(PedidoModelClass(currentUSer.user?.uid,date,carrito, totalCarrito))
-            carrito = arrayListOf<DetallePedidoModelClass>()
-            totalCarrito = "0".toFloat()
+            if(carrito.size>0){
+                savePedido(PedidoModelClass(currentUSer.user?.uid,date,carrito, totalCarrito))
+                carrito = arrayListOf<DetallePedidoModelClass>()
+                totalCarrito = "0".toFloat()
+                this.activity?.onBackPressed()
+            }
         }
 
         val buttonRegresar = view.findViewById<Button>(R.id.buttonRegresar)

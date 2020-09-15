@@ -99,29 +99,4 @@ class LoginFragment : Fragment() {
                 }
             }
     }
-
-    fun updateUI(user: FirebaseUser?) {
-        if(user != null){
-            db.collection("/users")
-                .whereEqualTo("userUID", user.uid)
-                .get()
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        for (document in task.result!!) {
-                            Log.d(
-                                TAG,
-                                document.id + " => " + document.data
-                            )
-                            currentUSer = UserModelClass(
-                                document.data.get("name").toString(),
-                                document.data.get("phoneNumber").toString(),
-                                document.data.get("emailAddress").toString(),
-                                user)
-                        }
-                    } else {
-                        Log.w(TAG, "Error getting documents.", task.exception)
-                    }
-                }
-        }
-    }
 }
